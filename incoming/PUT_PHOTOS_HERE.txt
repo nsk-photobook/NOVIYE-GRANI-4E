@@ -1,0 +1,1 @@
+Скопируйте сюда исходные JPG/PNG/WebP, затем запустите START_IMPORT_PHOTOS.cmd.
