@@ -2,183 +2,59 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#10161c">
-  <meta name="description" content="Цифровой выпускной альбом 4 «Е» класса школы № 219. Новосибирск, 2026.">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="4 «Е» — выпускной альбом 2026">
-  <meta property="og:description" content="Один класс. Одна история. Фотографии, в которых остаётся время.">
-  <meta property="og:image" content="https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/IMG_4540.JPG">
-  <title>4 «Е» — выпускной альбом 2026</title>
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://thumb.cloud.mail.ru" crossorigin>
-  <link rel="stylesheet" href="styles.css">
-  <script defer src="app.js"></script>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#111315">
+  <meta name="description" content="Новые грани — выпускной фотоальбом учеников 4Е класса.">
+  <title>Новые грани · 4Е</title>
+  <style>
+    :root{--ink:#111315;--paper:#f4f1ea;--muted:#74736f;--line:rgba(17,19,21,.16);--accent:#6e7c86;--white:#fff;--pad:clamp(20px,4vw,64px)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}button,a{font:inherit}a{color:inherit}.top{position:fixed;z-index:20;inset:0 0 auto;display:flex;align-items:center;justify-content:space-between;padding:18px var(--pad);color:#fff;background:linear-gradient(to bottom,rgba(0,0,0,.48),transparent)}
+    .brand{text-decoration:none;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:700}.top nav{display:flex;gap:24px}.top nav a{text-decoration:none;font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.9}.hero{position:relative;min-height:100svh;display:grid;align-items:end;overflow:hidden;background:#202326}.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.88) contrast(1.03)}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.56),rgba(0,0,0,.08) 68%),linear-gradient(0deg,rgba(0,0,0,.55),transparent 55%)}
+    .hero-copy{position:relative;z-index:2;color:#fff;padding:120px var(--pad) clamp(44px,8vw,96px);max-width:1100px}.eyebrow{display:flex;gap:14px;align-items:center;margin:0 0 24px;font-size:12px;letter-spacing:.17em;text-transform:uppercase}.eyebrow:before{content:"";width:48px;height:1px;background:currentColor}.hero h1{margin:0;font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:clamp(54px,9.6vw,150px);line-height:.82;letter-spacing:-.055em}.hero h1 em{display:block;font-weight:400;color:#cfd6da}.hero-note{max-width:520px;margin:34px 0 0;font-size:clamp(16px,1.6vw,22px);line-height:1.55;color:rgba(255,255,255,.84)}
+    main{overflow:hidden}.intro{padding:clamp(80px,12vw,170px) var(--pad);display:grid;grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);gap:8vw;border-bottom:1px solid var(--line)}.kicker{margin:0 0 24px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}.intro h2,.section-title{margin:0;font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:clamp(44px,6.5vw,104px);line-height:.96;letter-spacing:-.045em}.intro-copy{align-self:end}.intro-copy p{margin:0;font-size:clamp(18px,2vw,28px);line-height:1.5}.intro-copy small{display:block;margin-top:28px;color:var(--muted);line-height:1.6}
+    .rail-section{padding:clamp(70px,9vw,130px) 0}.section-head{padding:0 var(--pad);display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:38px}.count{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}.rail{display:grid;grid-auto-flow:column;grid-auto-columns:min(72vw,780px);gap:18px;overflow-x:auto;padding:0 var(--pad) 18px;scroll-snap-type:x mandatory;scrollbar-width:none}.rail::-webkit-scrollbar{display:none}.rail figure{position:relative;margin:0;aspect-ratio:4/3;overflow:hidden;background:#d7d3cb;scroll-snap-align:start;cursor:zoom-in}.rail figure.portrait{aspect-ratio:3/4;grid-auto-columns:min(54vw,520px)}.rail img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.2,.7,.2,1)}.rail figure:hover img{transform:scale(1.025)}.rail figcaption{position:absolute;inset:auto 0 0;padding:50px 18px 16px;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.6));font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+    .quote{margin:0 var(--pad);padding:clamp(80px,13vw,180px) 0;border-block:1px solid var(--line);display:grid;grid-template-columns:1fr 3fr;gap:7vw}.quote span{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}.quote blockquote{margin:0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(38px,6vw,88px);line-height:1.05;letter-spacing:-.035em}.quote em{color:var(--accent);font-weight:400}
+    .gallery-section{padding:clamp(80px,11vw,150px) var(--pad)}.gallery-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:44px}.gallery{columns:3 320px;column-gap:16px}.tile{display:block;width:100%;padding:0;border:0;background:none;margin:0 0 16px;break-inside:avoid;cursor:zoom-in;overflow:hidden}.tile img{display:block;width:100%;height:auto;transition:transform .65s ease,filter .65s ease}.tile:hover img{transform:scale(1.018);filter:saturate(1.04)}
+    .closing{position:relative;min-height:76svh;display:grid;place-items:center;text-align:center;color:#fff;background:#171a1c;overflow:hidden}.closing img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45;filter:saturate(.72)}.closing:after{content:"";position:absolute;inset:0;background:rgba(10,12,13,.34)}.closing div{position:relative;z-index:2;padding:var(--pad)}.closing p{font-size:11px;letter-spacing:.18em;text-transform:uppercase}.closing h2{margin:20px auto 38px;max-width:950px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(48px,8vw,118px);line-height:.9;font-weight:400;letter-spacing:-.05em}.cta{display:inline-flex;padding:14px 20px;border:1px solid rgba(255,255,255,.6);border-radius:999px;text-decoration:none;font-size:12px;letter-spacing:.1em;text-transform:uppercase;transition:.25s}.cta:hover{background:#fff;color:#111}.footer{display:flex;justify-content:space-between;gap:20px;padding:30px var(--pad);font-size:12px;color:var(--muted);border-top:1px solid rgba(255,255,255,.08);background:#171a1c}.footer a{color:#fff;text-decoration:none}
+    .loading{min-height:70svh;display:grid;place-items:center;padding:var(--pad);text-align:center}.loading-box{max-width:650px}.loading h2{font-family:Georgia,serif;font-weight:400;font-size:clamp(38px,6vw,72px);margin:0 0 20px}.loading p{color:var(--muted);line-height:1.6}.loading code{font-size:.9em}.hidden{display:none!important}
+    dialog{width:100vw;height:100dvh;max-width:none;max-height:none;border:0;padding:0;background:rgba(7,8,9,.96);color:#fff}dialog::backdrop{background:rgba(0,0,0,.92)}.lightbox-inner{position:relative;width:100%;height:100%;display:grid;place-items:center;padding:52px}.lightbox img{max-width:94vw;max-height:88dvh;object-fit:contain}.lightbox button{position:fixed;z-index:3;border:0;color:#fff;background:rgba(255,255,255,.08);backdrop-filter:blur(8px);width:46px;height:46px;border-radius:50%;cursor:pointer}.close{top:18px;right:18px;font-size:25px}.prev{left:18px;top:50%}.next{right:18px;top:50%}
+    @media(max-width:760px){.top nav{display:none}.intro{grid-template-columns:1fr;gap:50px}.hero h1{font-size:clamp(58px,19vw,94px)}.rail{grid-auto-columns:84vw}.quote{grid-template-columns:1fr;gap:34px}.gallery{columns:2 150px}.section-head,.gallery-head{align-items:start;flex-direction:column}.footer{flex-direction:column}.lightbox-inner{padding:62px 12px}.prev,.next{top:auto;bottom:18px}.prev{left:calc(50% - 58px)}.next{right:calc(50% - 58px)}}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+  </style>
 </head>
 <body>
-  <a class="skip-link" href="#album">Перейти к фотографиям</a>
-
-  <header class="site-header" data-header>
-    <a class="wordmark" href="#top" aria-label="В начало страницы">
-      <span>219</span><b>4 «Е»</b>
-    </a>
-    <nav class="desktop-nav" aria-label="Навигация">
-      <a href="#story">История</a>
-      <a href="#album">Фотографии</a>
-      <a href="#finale">Выпуск 2026</a>
-    </nav>
-    <button class="menu-button" type="button" aria-label="Открыть меню" aria-expanded="false" data-menu-button>
-      <span></span><span></span>
-    </button>
+  <header class="top">
+    <a class="brand" href="#top">Новые грани · 4Е</a>
+    <nav><a href="#story">История</a><a href="#gallery">Фотографии</a><a href="https://vk.com/nsk_photobook" target="_blank" rel="noopener">Фотограф ↗</a></nav>
   </header>
 
-  <nav class="mobile-menu" aria-label="Мобильная навигация" data-mobile-menu hidden>
-    <a href="#story">История</a>
-    <a href="#album">Фотографии</a>
-    <a href="#finale">Выпуск 2026</a>
-  </nav>
+  <section id="loading" class="loading">
+    <div class="loading-box"><p class="kicker">Фотоальбом 4Е</p><h2>Фотографии подготавливаются</h2><p>После загрузки комплекта в GitHub автоматическая сборка скачает реальные фотографии из публичной папки Mail.ru и сохранит их локально. Демо-изображений на этой странице нет.</p></div>
+  </section>
 
-  <main id="top">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-media photo-shell" data-photo-shell>
-        <img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/IMG_4540.JPG" data-photo="IMG_4540" alt="Дружеский групповой портрет учеников 4 «Е» класса" fetchpriority="high" decoding="async">
-        <div class="photo-status" aria-live="polite">Загружаем фотографию…</div>
-      </div>
-      <div class="hero-shade"></div>
-      <div class="hero-copy">
-        <p class="overline">Школа № 219 · Новосибирск</p>
-        <h1 id="hero-title"><span>Четыре года</span><br>в одном альбоме.</h1>
-        <p class="hero-note">4 «Е» · выпуск 2026</p>
-      </div>
-      <div class="hero-index" aria-hidden="true">01</div>
-      <a class="scroll-cue" href="#story" aria-label="Листать дальше"><span></span></a>
-    </section>
+  <div id="site" class="hidden">
+    <section class="hero" id="top"><img id="hero-image" alt="Выпускной альбом 4Е"><div class="hero-copy"><p class="eyebrow">Школа №219 · Выпуск 2026</p><h1>Новые<br><em>грани</em></h1><p class="hero-note">Фотоистория одного класса — о дружбе, характере и времени, которое хочется сохранить.</p></div></section>
+    <main>
+      <section class="intro" id="story"><div><p class="kicker">4 «Е» · один класс</p><h2>Не одинаковые.<br>Настоящие.</h2></div><div class="intro-copy"><p>В этом альбоме остаются не только лица, но и настроение: любимые вещи, дружеские жесты, серьёзность и смех.</p><small>Серия собрана из реальных фотографий класса и хранится непосредственно на GitHub Pages.</small></div></section>
+      <section class="rail-section"><div class="section-head"><div><p class="kicker">Избранные кадры</p><h2 class="section-title">Вместе.</h2></div><span class="count" id="rail-count"></span></div><div class="rail" id="rail" aria-label="Горизонтальная фотогалерея"></div></section>
+      <section class="quote"><span>О выпускном альбоме</span><blockquote>Через годы важны не идеальные позы, а то, <em>какими они были именно сейчас.</em></blockquote></section>
+      <section class="gallery-section" id="gallery"><div class="gallery-head"><div><p class="kicker">Полная серия</p><h2 class="section-title">Характеры.</h2></div><span class="count" id="gallery-count"></span></div><div class="gallery" id="gallery-grid"></div></section>
+      <section class="closing"><img id="closing-image" alt="4Е — выпускной фотоальбом"><div><p>Фотокнига · Новосибирск</p><h2>Сохранить класс таким, какой он сейчас.</h2><a class="cta" href="https://vk.com/nsk_photobook" target="_blank" rel="noopener">Написать фотографу ↗</a></div></section>
+    </main>
+    <footer class="footer"><span>Новые грани · 4Е · 2026</span><a href="https://vk.com/nsk_photobook" target="_blank" rel="noopener">VK / nsk_photobook ↗</a></footer>
+  </div>
 
-    <section class="opening section" id="story">
-      <p class="section-number">01 / НАША ИСТОРИЯ</p>
-      <div class="opening-grid">
-        <h2>Не постановка.<br><em>Настоящая история.</em></h2>
-        <div class="opening-copy">
-          <p>Друзья, характеры, привычные жесты и эмоции, которые нельзя повторить по команде. Эта серия сохраняет класс таким, каким он был в последний год начальной школы.</p>
-          <dl>
-            <div><dt>Класс</dt><dd>4 «Е»</dd></div>
-            <div><dt>Школа</dt><dd>№ 219</dd></div>
-            <div><dt>Год</dt><dd>2026</dd></div>
-          </dl>
-        </div>
-      </div>
-    </section>
-
-    <section class="editorial-pair section" aria-label="Избранные фотографии">
-      <button class="photo-card featured-landscape reveal" type="button" data-lightbox data-photo-name="IMG_4536">
-        <span class="photo-shell" data-photo-shell>
-          <img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/IMG_4536.JPG" data-photo="IMG_4536" alt="Групповой портрет школьников с любимыми игрушками" loading="lazy" decoding="async">
-          <span class="photo-status">Загружаем…</span>
-        </span>
-        <span class="caption"><b>Вместе</b><i>Кадр 02</i></span>
-      </button>
-      <div class="editorial-quote reveal">
-        <p>«Через годы важнее всего будет вспомнить не форму и причёску, а то, как мы смеялись вместе»</p>
-        <span>Фотоистория класса</span>
-      </div>
-      <button class="photo-card featured-portrait reveal" type="button" data-lightbox data-photo-name="IMG_4557">
-        <span class="photo-shell" data-photo-shell>
-          <img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/IMG_4557.JPG" data-photo="IMG_4557" alt="Вертикальный групповой портрет учеников" loading="lazy" decoding="async">
-          <span class="photo-status">Загружаем…</span>
-        </span>
-        <span class="caption"><b>Характеры</b><i>Кадр 03</i></span>
-      </button>
-    </section>
-
-    <section class="album section" id="album">
-      <div class="section-head">
-        <div>
-          <p class="section-number">02 / ФОТОАЛЬБОМ</p>
-          <h2>Лица. Эмоции.<br><em>Моменты.</em></h2>
-        </div>
-        <div class="rail-controls" aria-label="Управление галереей">
-          <button type="button" data-rail-prev aria-label="Назад">←</button>
-          <button type="button" data-rail-next aria-label="Вперёд">→</button>
-        </div>
-      </div>
-
-      <div class="photo-rail" data-photo-rail tabindex="0" aria-label="Горизонтальная галерея">
-        <button class="photo-card rail-card reveal" type="button" data-lightbox data-photo-name="IMG_4538">
-          <span class="photo-shell" data-photo-shell><img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/IMG_4538.JPG" data-photo="IMG_4538" alt="Спокойный групповой портрет школьников" loading="lazy"><span class="photo-status">Загружаем…</span></span><span class="caption"><b>Один класс</b><i>04</i></span>
-        </button>
-        <button class="photo-card rail-card reveal" type="button" data-lightbox data-photo-name="IMG_4541">
-          <span class="photo-shell" data-photo-shell><img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/IMG_4541.JPG" data-photo="IMG_4541" alt="Друзья с предметами, рассказывающими об увлечениях" loading="lazy"><span class="photo-status">Загружаем…</span></span><span class="caption"><b>Любимые вещи</b><i>05</i></span>
-        </button>
-        <button class="photo-card rail-card reveal" type="button" data-lightbox data-photo-name="IMG_4544">
-          <span class="photo-shell" data-photo-shell><img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/IMG_4544.JPG" data-photo="IMG_4544" alt="Групповой портрет четырёх друзей" loading="lazy"><span class="photo-status">Загружаем…</span></span><span class="caption"><b>Дружба</b><i>06</i></span>
-        </button>
-        <button class="photo-card rail-card reveal" type="button" data-lightbox data-photo-name="IMG_4545">
-          <span class="photo-shell" data-photo-shell><img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/IMG_4545.JPG" data-photo="IMG_4545" alt="Весёлый школьный кадр с игрушками" loading="lazy"><span class="photo-status">Загружаем…</span></span><span class="caption"><b>Без скучных поз</b><i>07</i></span>
-        </button>
-        <button class="photo-card rail-card reveal" type="button" data-lightbox data-photo-name="IMG_4548">
-          <span class="photo-shell" data-photo-shell><img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/IMG_4548.JPG" data-photo="IMG_4548" alt="Дружеский портрет учеников" loading="lazy"><span class="photo-status">Загружаем…</span></span><span class="caption"><b>Свои люди</b><i>08</i></span>
-        </button>
-      </div>
-      <p class="swipe-hint">Проведите вбок, чтобы листать <span>→</span></p>
-    </section>
-
-    <section class="cinema section">
-      <button class="cinema-photo photo-card reveal" type="button" data-lightbox data-photo-name="IMG_4554">
-        <span class="photo-shell" data-photo-shell>
-          <img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/IMG_4554.JPG" data-photo="IMG_4554" alt="Динамичный групповой кадр, где друзья держат одноклассника на руках" loading="lazy">
-          <span class="photo-status">Загружаем…</span>
-        </span>
-      </button>
-      <div class="cinema-copy reveal">
-        <p class="section-number">03 / ДРУЖБА</p>
-        <h2>Самые важные<br>кадры — <em>живые.</em></h2>
-        <p>В альбоме остаются не только лица, но и отношения: кто с кем дружил, над чем смеялись и какими были рядом друг с другом.</p>
-      </div>
-    </section>
-
-    <section class="mosaic section" aria-labelledby="mosaic-title">
-      <div class="mosaic-head">
-        <p class="section-number">04 / ОДИН СЪЁМОЧНЫЙ ДЕНЬ</p>
-        <h2 id="mosaic-title">Много характеров.<br><em>Одна история.</em></h2>
-      </div>
-      <div class="mosaic-grid">
-        <button class="photo-card mosaic-card tall reveal" type="button" data-lightbox data-photo-name="IMG_4555"><span class="photo-shell" data-photo-shell><img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/IMG_4555.JPG" data-photo="IMG_4555" alt="Весёлый вертикальный групповой портрет" loading="lazy"><span class="photo-status">Загружаем…</span></span></button>
-        <button class="photo-card mosaic-card reveal" type="button" data-lightbox data-photo-name="IMG_4556"><span class="photo-shell" data-photo-shell><img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/IMG_4556.JPG" data-photo="IMG_4556" alt="Вертикальный портрет друзей" loading="lazy"><span class="photo-status">Загружаем…</span></span></button>
-        <button class="photo-card mosaic-card tall reveal" type="button" data-lightbox data-photo-name="IMG_4558"><span class="photo-shell" data-photo-shell><img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/IMG_4558.JPG" data-photo="IMG_4558" alt="Классический групповой портрет школьников" loading="lazy"><span class="photo-status">Загружаем…</span></span></button>
-        <button class="photo-card mosaic-card reveal" type="button" data-lightbox data-photo-name="IMG_4562"><span class="photo-shell" data-photo-shell><img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/IMG_4562.JPG" data-photo="IMG_4562" alt="Школьники позируют с большой цифрой пять" loading="lazy"><span class="photo-status">Загружаем…</span></span></button>
-        <button class="photo-card mosaic-card wide reveal" type="button" data-lightbox data-photo-name="IMG_4549"><span class="photo-shell" data-photo-shell><img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/IMG_4549.JPG" data-photo="IMG_4549" alt="Весёлая постановочная фотография друзей" loading="lazy"><span class="photo-status">Загружаем…</span></span></button>
-        <button class="photo-card mosaic-card reveal" type="button" data-lightbox data-photo-name="IMG_4563"><span class="photo-shell" data-photo-shell><img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/IMG_4563.JPG" data-photo="IMG_4563" alt="Современная композиция школьного группового портрета" loading="lazy"><span class="photo-status">Загружаем…</span></span></button>
-        <button class="photo-card mosaic-card tall reveal" type="button" data-lightbox data-photo-name="IMG_4564"><span class="photo-shell" data-photo-shell><img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/IMG_4564.JPG" data-photo="IMG_4564" alt="Школьники в свободной групповой композиции" loading="lazy"><span class="photo-status">Загружаем…</span></span></button>
-        <button class="photo-card mosaic-card reveal" type="button" data-lightbox data-photo-name="IMG_4566"><span class="photo-shell" data-photo-shell><img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/IMG_4566.JPG" data-photo="IMG_4566" alt="Друзья улыбаются в студии" loading="lazy"><span class="photo-status">Загружаем…</span></span></button>
-        <button class="photo-card mosaic-card reveal" type="button" data-lightbox data-photo-name="IMG_4570"><span class="photo-shell" data-photo-shell><img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/IMG_4570.JPG" data-photo="IMG_4570" alt="Спокойный студийный групповой портрет" loading="lazy"><span class="photo-status">Загружаем…</span></span></button>
-      </div>
-    </section>
-
-    <section class="finale section" id="finale">
-      <div class="finale-photo photo-shell" data-photo-shell>
-        <img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/IMG_4559.JPG" data-photo="IMG_4559" alt="Групповой портрет учеников 4 «Е» класса" loading="lazy">
-        <span class="photo-status">Загружаем…</span>
-      </div>
-      <div class="finale-shade"></div>
-      <div class="finale-copy reveal">
-        <p>Школа № 219 · Новосибирск</p>
-        <h2>До свидания,<br><em>начальная школа.</em></h2>
-        <span>4 «Е» · 2026</span>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div><b>4 «Е»</b><span>Выпускной альбом 2026</span></div>
-    <p>Цифровой выпускной альбом · 2026</p>
-    <a href="https://vk.com/nsk_photobook" target="_blank" rel="noopener">Фотокнига Новосибирск ↗</a>
-  </footer>
-
-  <dialog class="lightbox" aria-label="Просмотр фотографии" data-lightbox-dialog>
-    <button class="lightbox-close" type="button" aria-label="Закрыть" data-lightbox-close>×</button>
-    <button class="lightbox-arrow prev" type="button" aria-label="Предыдущая фотография" data-lightbox-prev>←</button>
-    <figure><img alt=""><figcaption></figcaption></figure>
-    <button class="lightbox-arrow next" type="button" aria-label="Следующая фотография" data-lightbox-next>→</button>
-  </dialog>
+  <dialog class="lightbox" id="lightbox"><div class="lightbox-inner"><button class="close" aria-label="Закрыть">×</button><button class="prev" aria-label="Предыдущее фото">←</button><img alt=""><button class="next" aria-label="Следующее фото">→</button></div></dialog>
+  <script>
+    const $=s=>document.querySelector(s);let photos=[],active=0;
+    const make=(tag,cls)=>{const e=document.createElement(tag);if(cls)e.className=cls;return e};
+    function openPhoto(i){active=i;const d=$('#lightbox');d.querySelector('img').src=photos[i].src;d.showModal();}
+    function render(data){photos=data.photos||[];if(!photos.length)throw new Error('empty manifest');$('#hero-image').src=data.hero||photos[0].src;$('#closing-image').src=photos.at(-1).src;$('#rail-count').textContent=`${Math.min(8,photos.length)} кадров`;$('#gallery-count').textContent=`${photos.length} фотографий`;
+      photos.slice(0,8).forEach((p,i)=>{const f=make('figure',p.orientation);const im=make('img');im.src=p.src;im.alt=p.alt;im.loading=i<2?'eager':'lazy';const c=make('figcaption');c.textContent=String(i+1).padStart(2,'0')+' · 4Е';f.append(im,c);f.onclick=()=>openPhoto(i);$('#rail').append(f)});
+      photos.forEach((p,i)=>{const b=make('button','tile');b.type='button';b.setAttribute('aria-label',`Открыть фотографию ${i+1}`);const im=make('img');im.src=p.src;im.alt=p.alt;im.loading='lazy';im.width=p.width;im.height=p.height;b.append(im);b.onclick=()=>openPhoto(i);$('#gallery-grid').append(b)});
+      $('#loading').classList.add('hidden');$('#site').classList.remove('hidden');}
+    fetch('photos/manifest.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(r.status);return r.json()}).then(render).catch(e=>console.warn('Фотографии ещё не собраны:',e));
+    const dlg=$('#lightbox');dlg.querySelector('.close').onclick=()=>dlg.close();dlg.querySelector('.prev').onclick=()=>{active=(active-1+photos.length)%photos.length;dlg.querySelector('img').src=photos[active].src};dlg.querySelector('.next').onclick=()=>{active=(active+1)%photos.length;dlg.querySelector('img').src=photos[active].src};dlg.onclick=e=>{if(e.target===dlg)dlg.close()};document.addEventListener('keydown',e=>{if(!dlg.open)return;if(e.key==='ArrowLeft')dlg.querySelector('.prev').click();if(e.key==='ArrowRight')dlg.querySelector('.next').click()});
+  </script>
 </body>
 </html>
