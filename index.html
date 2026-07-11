@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#4d2cff">
+  <meta name="description" content="Цифровой выпускной фотоальбом 4 «Е» класса, 2026 год.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="4 «Е» — выпускной альбом 2026">
+  <meta property="og:description" content="Наш класс, наши характеры, наша история.">
+  <meta property="og:image" content="assets/demo/demo-01.webp">
+  <title>4 «Е» — выпускной альбом 2026</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="config.js"></script>
+  <script defer src="assets/gallery-data.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#album">К альбому</a>
+  <header class="topbar">
+    <a class="logo" href="#top" aria-label="Наверх"><span>4</span><i>Е</i></a>
+    <nav aria-label="Навигация">
+      <a href="#album">Альбом</a><a href="#story">История</a><a href="#wishes">Пожелания</a>
+    </nav>
+    <button class="soundless" id="themeToggle" type="button" aria-label="Переключить оформление">◐</button>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-bg" id="heroBg" aria-hidden="true"></div>
+      <div class="grain"></div>
+      <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+      <div class="hero-copy reveal">
+        <p class="overline"><span>Школа № 219</span><span>Новосибирск</span></p>
+        <h1><em>Выпускной</em><br>альбом</h1>
+        <div class="hero-bottom">
+          <p>Один класс. Сотни моментов.<br>История, которую хочется пересматривать.</p>
+          <a class="round-link" href="#album" aria-label="Открыть альбом">↓</a>
+        </div>
+      </div>
+      <div class="class-stamp reveal"><b>4 «Е»</b><span>2026</span></div>
+      <p class="edge-note">ЛИСТАЙ · СМОТРИ · ВСПОМИНАЙ</p>
+    </section>
+
+    <section class="manifest section" id="story">
+      <p class="section-no">01 / НАША ИСТОРИЯ</p>
+      <div class="manifest-grid">
+        <h2>Мы были<br><span>разными.</span><br>Мы были<br><i>вместе.</i></h2>
+        <div class="manifest-copy">
+          <p>Этот альбом — не просто набор портретов. Здесь остаются характеры, дружба, любимые вещи, серьёзные лица и тот самый смех между дублями.</p>
+          <div class="facts"><span><b>4</b> года вместе</span><span><b>1</b> общий класс</span><span><b>∞</b> воспоминаний</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="album section" id="album">
+      <div class="album-head">
+        <div><p class="section-no">02 / ФОТОАЛЬБОМ</p><h2>Лица.<br><span>Эмоции.</span><br>Моменты.</h2></div>
+        <div class="filters" role="group" aria-label="Фильтр фотографий">
+          <button class="active" data-filter="all">Все</button>
+          <button data-filter="class">Наш класс</button>
+          <button data-filter="friends">Друзья</button>
+          <button data-filter="portraits">Портреты</button>
+        </div>
+      </div>
+      <div class="photo-grid" id="photoGrid" aria-live="polite"></div>
+      <div class="empty-state" id="emptyState" hidden>
+        <b>Фотографии готовы к подключению</b>
+        <p>Положите исходники в папку <code>incoming</code> и запустите <code>START_IMPORT_PHOTOS.cmd</code>. Галерея сформируется автоматически.</p>
+      </div>
+    </section>
+
+    <section class="ticker" aria-hidden="true"><div>НАШ КЛАСС · НАША ИСТОРИЯ · НАШ 2026 · НАШ КЛАСС · НАША ИСТОРИЯ · НАШ 2026 ·</div></section>
+
+    <section class="chapter section">
+      <p class="section-no">03 / ОДИН ДЕНЬ СЪЁМКИ</p>
+      <div class="chapter-layout">
+        <div class="chapter-photo" id="chapterPhoto"><span>ЖИВЫЕ<br>КАДРЫ</span></div>
+        <div class="chapter-text"><h2>Без скучных<br>одинаковых поз.</h2><p>Кто-то пришёл с любимой игрушкой. Кто-то придумал смешную сцену. Кто-то просто был собой. Поэтому каждый кадр здесь — про нас.</p><blockquote>«Через много лет мы забудем расписание уроков, но точно вспомним, как смеялись вместе»</blockquote></div>
+      </div>
+    </section>
+
+    <section class="wishes section" id="wishes">
+      <p class="section-no">04 / ВПЕРЁД</p>
+      <div class="wishes-card">
+        <span class="star">✦</span>
+        <h2>Пусть дальше будет<br><em>ещё интереснее.</em></h2>
+        <p>Новые классы, новые друзья, новые победы. А этот альбом всегда напомнит, с чего начиналась наша большая история.</p>
+        <div class="signature">4 «Е» · 2026</div>
+      </div>
+    </section>
+  </main>
+
+  <footer><a class="logo" href="#top"><span>4</span><i>Е</i></a><p>Цифровой выпускной альбом<br><span id="footerSchool">Школа № 219 · 2026</span></p><a href="#top">Наверх ↑</a></footer>
+
+  <dialog class="lightbox" id="lightbox">
+    <button class="lb-close" type="button" aria-label="Закрыть">×</button>
+    <button class="lb-prev" type="button" aria-label="Предыдущая">←</button>
+    <figure><img id="lbImage" alt=""><figcaption id="lbCaption"></figcaption></figure>
+    <button class="lb-next" type="button" aria-label="Следующая">→</button>
+  </dialog>
+</body>
+</html>
