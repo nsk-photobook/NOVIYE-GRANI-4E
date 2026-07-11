@@ -1,59 +1,117 @@
 (() => {
-  const cfg = window.ALBUM_CONFIG || {};
-  const photos = Array.isArray(window.ALBUM_PHOTOS) ? window.ALBUM_PHOTOS : [];
-  document.title = `${cfg.className || '4 «Е»'} — выпускной альбом ${cfg.year || '2026'}`;
-  document.querySelectorAll('.overline span')[0].textContent = cfg.school || 'Школа № 219';
-  document.querySelectorAll('.overline span')[1].textContent = cfg.city || 'Новосибирск';
-  document.querySelector('.class-stamp b').textContent = cfg.className || '4 «Е»';
-  document.querySelector('.class-stamp span').textContent = cfg.year || '2026';
-  document.querySelector('.signature').textContent = `${cfg.className || '4 «Е»'} · ${cfg.year || '2026'}`;
-  document.getElementById('footerSchool').textContent = `${cfg.school || 'Школа № 219'} · ${cfg.year || '2026'}`;
+  "use strict";
 
-  const hero = document.getElementById('heroBg');
-  const chapter = document.getElementById('chapterPhoto');
-  if (photos[0]) hero.style.backgroundImage = `url("${photos[0].full}")`;
-  if (photos[4] || photos[0]) chapter.style.backgroundImage = `url("${(photos[4] || photos[0]).full}")`;
+  const CLOUD_BASE = "https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/";
+  const EXTENSIONS = ["JPG", "jpg", "JPEG", "jpeg", "PNG", "png"];
 
-  const grid = document.getElementById('photoGrid');
-  const empty = document.getElementById('emptyState');
-  let visible = [...photos];
-  let activeIndex = 0;
+  const remoteUrl = (name, ext = "JPG") =>
+    `${CLOUD_BASE}${encodeURIComponent(name)}.${ext}`;
 
-  function render(filter='all') {
-    visible = filter === 'all' ? [...photos] : photos.filter(p => p.category === filter);
-    grid.innerHTML = '';
-    empty.hidden = visible.length > 0;
-    visible.forEach((p, index) => {
-      const card = document.createElement('button');
-      card.type = 'button';
-      card.className = 'photo-card';
-      card.dataset.index = index;
-      card.setAttribute('aria-label', `Открыть фотографию: ${p.title}`);
-      const img = document.createElement('img');
-      img.src = p.thumb || p.full;
-      img.dataset.full = p.full;
-      img.alt = p.alt || p.title || 'Фотография класса';
-      img.loading = index < 3 ? 'eager' : 'lazy';
-      const label = document.createElement('span'); label.textContent = p.title || `Кадр ${index+1}`;
-      card.append(img,label); card.addEventListener('click',()=>openLightbox(index)); grid.append(card);
-    });
+  function connectPhoto(img) {
+    const name = img.dataset.photo;
+    const shell = img.closest("[data-photo-shell]");
+    if (!name || !shell) return;
+
+    let attempt = 0;
+    let resolved = false;
+
+    const markLoaded = () => {
+      resolved = true;
+      shell.classList.remove("failed");
+      shell.classList.add("loaded");
+      img.dataset.resolvedSrc = img.currentSrc || img.src;
+    };
+
+    const tryNext = () => {
+      if (resolved) return;
+      if (attempt >= EXTENSIONS.length) {
+        shell.classList.add("failed");
+        const status = shell.querySelector(".photo-status");
+        if (status) status.textContent = "Фотография временно недоступна";
+        return;
+      }
+      img.src = remoteUrl(name, EXTENSIONS[attempt++]);
+    };
+
+    img.addEventListener("load", markLoaded);
+    img.addEventListener("error", tryNext);
+
+    if (img.complete && img.naturalWidth > 0) markLoaded();
+    else if (!img.getAttribute("src")) tryNext();
   }
 
-  document.querySelectorAll('[data-filter]').forEach(btn => btn.addEventListener('click', () => {
-    document.querySelectorAll('[data-filter]').forEach(b=>b.classList.toggle('active',b===btn));
-    render(btn.dataset.filter);
+  document.querySelectorAll("img[data-photo]").forEach(connectPhoto);
+
+  const header = document.querySelector("[data-header]");
+  const syncHeader = () => header?.classList.toggle("scrolled", window.scrollY > 24);
+  syncHeader();
+  window.addEventListener("scroll", syncHeader, { passive: true });
+
+  const menuButton = document.querySelector("[data-menu-button]");
+  const mobileMenu = document.querySelector("[data-mobile-menu]");
+  menuButton?.addEventListener("click", () => {
+    const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+    menuButton.setAttribute("aria-expanded", String(!isOpen));
+    mobileMenu.hidden = isOpen;
+  });
+  mobileMenu?.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
+    mobileMenu.hidden = true;
+    menuButton?.setAttribute("aria-expanded", "false");
   }));
 
-  const dialog = document.getElementById('lightbox');
-  const lbImg = document.getElementById('lbImage'); const lbCap = document.getElementById('lbCaption');
-  function openLightbox(index){ if(!visible.length) return; activeIndex=index; updateLightbox(); dialog.showModal(); }
-  function updateLightbox(){ const p=visible[activeIndex]; lbImg.src=p.full; lbImg.alt=p.alt||p.title||''; lbCap.textContent=p.title||''; }
-  function move(step){ activeIndex=(activeIndex+step+visible.length)%visible.length; updateLightbox(); }
-  document.querySelector('.lb-close').addEventListener('click',()=>dialog.close());
-  document.querySelector('.lb-prev').addEventListener('click',()=>move(-1));
-  document.querySelector('.lb-next').addEventListener('click',()=>move(1));
-  dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close()});
-  document.addEventListener('keydown',e=>{if(!dialog.open)return;if(e.key==='ArrowLeft')move(-1);if(e.key==='ArrowRight')move(1)});
-  document.getElementById('themeToggle').addEventListener('click',()=>document.body.classList.toggle('dark'));
-  render();
+  const rail = document.querySelector("[data-photo-rail]");
+  const railStep = () => Math.min((rail?.clientWidth || 700) * .82, 680);
+  document.querySelector("[data-rail-prev]")?.addEventListener("click", () =>
+    rail?.scrollBy({ left: -railStep(), behavior: "smooth" }));
+  document.querySelector("[data-rail-next]")?.addEventListener("click", () =>
+    rail?.scrollBy({ left: railStep(), behavior: "smooth" }));
+
+  const revealItems = [...document.querySelectorAll(".reveal")];
+  if ("IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: .1, rootMargin: "0px 0px -4%" });
+    revealItems.forEach(item => observer.observe(item));
+  } else {
+    revealItems.forEach(item => item.classList.add("visible"));
+  }
+
+  const lightbox = document.querySelector("[data-lightbox-dialog]");
+  const lightboxImage = lightbox?.querySelector("figure img");
+  const lightboxCaption = lightbox?.querySelector("figcaption");
+  const cards = [...document.querySelectorAll("[data-lightbox]")];
+  let activeIndex = 0;
+
+  const showPhoto = index => {
+    if (!lightbox || !lightboxImage || cards.length === 0) return;
+    activeIndex = (index + cards.length) % cards.length;
+    const card = cards[activeIndex];
+    const img = card.querySelector("img[data-photo]");
+    if (!img) return;
+    lightboxImage.src = img.dataset.resolvedSrc || img.currentSrc || img.src || remoteUrl(img.dataset.photo);
+    lightboxImage.alt = img.alt;
+    if (lightboxCaption) lightboxCaption.textContent = `4 «Е» · кадр ${String(activeIndex + 1).padStart(2, "0")} · 2026`;
+  };
+
+  cards.forEach((card, index) => card.addEventListener("click", () => {
+    showPhoto(index);
+    if (typeof lightbox?.showModal === "function") lightbox.showModal();
+  }));
+
+  document.querySelector("[data-lightbox-close]")?.addEventListener("click", () => lightbox?.close());
+  document.querySelector("[data-lightbox-prev]")?.addEventListener("click", () => showPhoto(activeIndex - 1));
+  document.querySelector("[data-lightbox-next]")?.addEventListener("click", () => showPhoto(activeIndex + 1));
+  lightbox?.addEventListener("click", event => {
+    if (event.target === lightbox) lightbox.close();
+  });
+  document.addEventListener("keydown", event => {
+    if (!lightbox?.open) return;
+    if (event.key === "ArrowLeft") showPhoto(activeIndex - 1);
+    if (event.key === "ArrowRight") showPhoto(activeIndex + 1);
+  });
 })();

@@ -2,103 +2,183 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#4d2cff">
-  <meta name="description" content="Цифровой выпускной фотоальбом 4 «Е» класса, 2026 год.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#10161c">
+  <meta name="description" content="Цифровой выпускной альбом 4 «Е» класса школы № 219. Новосибирск, 2026.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="4 «Е» — выпускной альбом 2026">
-  <meta property="og:description" content="Наш класс, наши характеры, наша история.">
-  <meta property="og:image" content="assets/demo/demo-01.webp">
+  <meta property="og:description" content="Один класс. Одна история. Фотографии, в которых остаётся время.">
+  <meta property="og:image" content="https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/IMG_4540.JPG">
   <title>4 «Е» — выпускной альбом 2026</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://thumb.cloud.mail.ru" crossorigin>
   <link rel="stylesheet" href="styles.css">
-  <script defer src="config.js"></script>
-  <script defer src="assets/gallery-data.js"></script>
   <script defer src="app.js"></script>
 </head>
 <body>
-  <a class="skip" href="#album">К альбому</a>
-  <header class="topbar">
-    <a class="logo" href="#top" aria-label="Наверх"><span>4</span><i>Е</i></a>
-    <nav aria-label="Навигация">
-      <a href="#album">Альбом</a><a href="#story">История</a><a href="#wishes">Пожелания</a>
+  <a class="skip-link" href="#album">Перейти к фотографиям</a>
+
+  <header class="site-header" data-header>
+    <a class="wordmark" href="#top" aria-label="В начало страницы">
+      <span>219</span><b>4 «Е»</b>
+    </a>
+    <nav class="desktop-nav" aria-label="Навигация">
+      <a href="#story">История</a>
+      <a href="#album">Фотографии</a>
+      <a href="#finale">Выпуск 2026</a>
     </nav>
-    <button class="soundless" id="themeToggle" type="button" aria-label="Переключить оформление">◐</button>
+    <button class="menu-button" type="button" aria-label="Открыть меню" aria-expanded="false" data-menu-button>
+      <span></span><span></span>
+    </button>
   </header>
 
+  <nav class="mobile-menu" aria-label="Мобильная навигация" data-mobile-menu hidden>
+    <a href="#story">История</a>
+    <a href="#album">Фотографии</a>
+    <a href="#finale">Выпуск 2026</a>
+  </nav>
+
   <main id="top">
-    <section class="hero">
-      <div class="hero-bg" id="heroBg" aria-hidden="true"></div>
-      <div class="grain"></div>
-      <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
-      <div class="hero-copy reveal">
-        <p class="overline"><span>Школа № 219</span><span>Новосибирск</span></p>
-        <h1><em>Выпускной</em><br>альбом</h1>
-        <div class="hero-bottom">
-          <p>Один класс. Сотни моментов.<br>История, которую хочется пересматривать.</p>
-          <a class="round-link" href="#album" aria-label="Открыть альбом">↓</a>
-        </div>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-media photo-shell" data-photo-shell>
+        <img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/IMG_4540.JPG" data-photo="IMG_4540" alt="Дружеский групповой портрет учеников 4 «Е» класса" fetchpriority="high" decoding="async">
+        <div class="photo-status" aria-live="polite">Загружаем фотографию…</div>
       </div>
-      <div class="class-stamp reveal"><b>4 «Е»</b><span>2026</span></div>
-      <p class="edge-note">ЛИСТАЙ · СМОТРИ · ВСПОМИНАЙ</p>
+      <div class="hero-shade"></div>
+      <div class="hero-copy">
+        <p class="overline">Школа № 219 · Новосибирск</p>
+        <h1 id="hero-title"><span>Четыре года</span><br>в одном альбоме.</h1>
+        <p class="hero-note">4 «Е» · выпуск 2026</p>
+      </div>
+      <div class="hero-index" aria-hidden="true">01</div>
+      <a class="scroll-cue" href="#story" aria-label="Листать дальше"><span></span></a>
     </section>
 
-    <section class="manifest section" id="story">
-      <p class="section-no">01 / НАША ИСТОРИЯ</p>
-      <div class="manifest-grid">
-        <h2>Мы были<br><span>разными.</span><br>Мы были<br><i>вместе.</i></h2>
-        <div class="manifest-copy">
-          <p>Этот альбом — не просто набор портретов. Здесь остаются характеры, дружба, любимые вещи, серьёзные лица и тот самый смех между дублями.</p>
-          <div class="facts"><span><b>4</b> года вместе</span><span><b>1</b> общий класс</span><span><b>∞</b> воспоминаний</span></div>
+    <section class="opening section" id="story">
+      <p class="section-number">01 / НАША ИСТОРИЯ</p>
+      <div class="opening-grid">
+        <h2>Не постановка.<br><em>Настоящая история.</em></h2>
+        <div class="opening-copy">
+          <p>Друзья, характеры, привычные жесты и эмоции, которые нельзя повторить по команде. Эта серия сохраняет класс таким, каким он был в последний год начальной школы.</p>
+          <dl>
+            <div><dt>Класс</dt><dd>4 «Е»</dd></div>
+            <div><dt>Школа</dt><dd>№ 219</dd></div>
+            <div><dt>Год</dt><dd>2026</dd></div>
+          </dl>
         </div>
       </div>
+    </section>
+
+    <section class="editorial-pair section" aria-label="Избранные фотографии">
+      <button class="photo-card featured-landscape reveal" type="button" data-lightbox data-photo-name="IMG_4536">
+        <span class="photo-shell" data-photo-shell>
+          <img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/IMG_4536.JPG" data-photo="IMG_4536" alt="Групповой портрет школьников с любимыми игрушками" loading="lazy" decoding="async">
+          <span class="photo-status">Загружаем…</span>
+        </span>
+        <span class="caption"><b>Вместе</b><i>Кадр 02</i></span>
+      </button>
+      <div class="editorial-quote reveal">
+        <p>«Через годы важнее всего будет вспомнить не форму и причёску, а то, как мы смеялись вместе»</p>
+        <span>Фотоистория класса</span>
+      </div>
+      <button class="photo-card featured-portrait reveal" type="button" data-lightbox data-photo-name="IMG_4557">
+        <span class="photo-shell" data-photo-shell>
+          <img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/IMG_4557.JPG" data-photo="IMG_4557" alt="Вертикальный групповой портрет учеников" loading="lazy" decoding="async">
+          <span class="photo-status">Загружаем…</span>
+        </span>
+        <span class="caption"><b>Характеры</b><i>Кадр 03</i></span>
+      </button>
     </section>
 
     <section class="album section" id="album">
-      <div class="album-head">
-        <div><p class="section-no">02 / ФОТОАЛЬБОМ</p><h2>Лица.<br><span>Эмоции.</span><br>Моменты.</h2></div>
-        <div class="filters" role="group" aria-label="Фильтр фотографий">
-          <button class="active" data-filter="all">Все</button>
-          <button data-filter="class">Наш класс</button>
-          <button data-filter="friends">Друзья</button>
-          <button data-filter="portraits">Портреты</button>
+      <div class="section-head">
+        <div>
+          <p class="section-number">02 / ФОТОАЛЬБОМ</p>
+          <h2>Лица. Эмоции.<br><em>Моменты.</em></h2>
+        </div>
+        <div class="rail-controls" aria-label="Управление галереей">
+          <button type="button" data-rail-prev aria-label="Назад">←</button>
+          <button type="button" data-rail-next aria-label="Вперёд">→</button>
         </div>
       </div>
-      <div class="photo-grid" id="photoGrid" aria-live="polite"></div>
-      <div class="empty-state" id="emptyState" hidden>
-        <b>Фотографии готовы к подключению</b>
-        <p>Положите исходники в папку <code>incoming</code> и запустите <code>START_IMPORT_PHOTOS.cmd</code>. Галерея сформируется автоматически.</p>
+
+      <div class="photo-rail" data-photo-rail tabindex="0" aria-label="Горизонтальная галерея">
+        <button class="photo-card rail-card reveal" type="button" data-lightbox data-photo-name="IMG_4538">
+          <span class="photo-shell" data-photo-shell><img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/IMG_4538.JPG" data-photo="IMG_4538" alt="Спокойный групповой портрет школьников" loading="lazy"><span class="photo-status">Загружаем…</span></span><span class="caption"><b>Один класс</b><i>04</i></span>
+        </button>
+        <button class="photo-card rail-card reveal" type="button" data-lightbox data-photo-name="IMG_4541">
+          <span class="photo-shell" data-photo-shell><img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/IMG_4541.JPG" data-photo="IMG_4541" alt="Друзья с предметами, рассказывающими об увлечениях" loading="lazy"><span class="photo-status">Загружаем…</span></span><span class="caption"><b>Любимые вещи</b><i>05</i></span>
+        </button>
+        <button class="photo-card rail-card reveal" type="button" data-lightbox data-photo-name="IMG_4544">
+          <span class="photo-shell" data-photo-shell><img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/IMG_4544.JPG" data-photo="IMG_4544" alt="Групповой портрет четырёх друзей" loading="lazy"><span class="photo-status">Загружаем…</span></span><span class="caption"><b>Дружба</b><i>06</i></span>
+        </button>
+        <button class="photo-card rail-card reveal" type="button" data-lightbox data-photo-name="IMG_4545">
+          <span class="photo-shell" data-photo-shell><img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/IMG_4545.JPG" data-photo="IMG_4545" alt="Весёлый школьный кадр с игрушками" loading="lazy"><span class="photo-status">Загружаем…</span></span><span class="caption"><b>Без скучных поз</b><i>07</i></span>
+        </button>
+        <button class="photo-card rail-card reveal" type="button" data-lightbox data-photo-name="IMG_4548">
+          <span class="photo-shell" data-photo-shell><img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/IMG_4548.JPG" data-photo="IMG_4548" alt="Дружеский портрет учеников" loading="lazy"><span class="photo-status">Загружаем…</span></span><span class="caption"><b>Свои люди</b><i>08</i></span>
+        </button>
+      </div>
+      <p class="swipe-hint">Проведите вбок, чтобы листать <span>→</span></p>
+    </section>
+
+    <section class="cinema section">
+      <button class="cinema-photo photo-card reveal" type="button" data-lightbox data-photo-name="IMG_4554">
+        <span class="photo-shell" data-photo-shell>
+          <img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/IMG_4554.JPG" data-photo="IMG_4554" alt="Динамичный групповой кадр, где друзья держат одноклассника на руках" loading="lazy">
+          <span class="photo-status">Загружаем…</span>
+        </span>
+      </button>
+      <div class="cinema-copy reveal">
+        <p class="section-number">03 / ДРУЖБА</p>
+        <h2>Самые важные<br>кадры — <em>живые.</em></h2>
+        <p>В альбоме остаются не только лица, но и отношения: кто с кем дружил, над чем смеялись и какими были рядом друг с другом.</p>
       </div>
     </section>
 
-    <section class="ticker" aria-hidden="true"><div>НАШ КЛАСС · НАША ИСТОРИЯ · НАШ 2026 · НАШ КЛАСС · НАША ИСТОРИЯ · НАШ 2026 ·</div></section>
-
-    <section class="chapter section">
-      <p class="section-no">03 / ОДИН ДЕНЬ СЪЁМКИ</p>
-      <div class="chapter-layout">
-        <div class="chapter-photo" id="chapterPhoto"><span>ЖИВЫЕ<br>КАДРЫ</span></div>
-        <div class="chapter-text"><h2>Без скучных<br>одинаковых поз.</h2><p>Кто-то пришёл с любимой игрушкой. Кто-то придумал смешную сцену. Кто-то просто был собой. Поэтому каждый кадр здесь — про нас.</p><blockquote>«Через много лет мы забудем расписание уроков, но точно вспомним, как смеялись вместе»</blockquote></div>
+    <section class="mosaic section" aria-labelledby="mosaic-title">
+      <div class="mosaic-head">
+        <p class="section-number">04 / ОДИН СЪЁМОЧНЫЙ ДЕНЬ</p>
+        <h2 id="mosaic-title">Много характеров.<br><em>Одна история.</em></h2>
+      </div>
+      <div class="mosaic-grid">
+        <button class="photo-card mosaic-card tall reveal" type="button" data-lightbox data-photo-name="IMG_4555"><span class="photo-shell" data-photo-shell><img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/IMG_4555.JPG" data-photo="IMG_4555" alt="Весёлый вертикальный групповой портрет" loading="lazy"><span class="photo-status">Загружаем…</span></span></button>
+        <button class="photo-card mosaic-card reveal" type="button" data-lightbox data-photo-name="IMG_4556"><span class="photo-shell" data-photo-shell><img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/IMG_4556.JPG" data-photo="IMG_4556" alt="Вертикальный портрет друзей" loading="lazy"><span class="photo-status">Загружаем…</span></span></button>
+        <button class="photo-card mosaic-card tall reveal" type="button" data-lightbox data-photo-name="IMG_4558"><span class="photo-shell" data-photo-shell><img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/IMG_4558.JPG" data-photo="IMG_4558" alt="Классический групповой портрет школьников" loading="lazy"><span class="photo-status">Загружаем…</span></span></button>
+        <button class="photo-card mosaic-card reveal" type="button" data-lightbox data-photo-name="IMG_4562"><span class="photo-shell" data-photo-shell><img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/IMG_4562.JPG" data-photo="IMG_4562" alt="Школьники позируют с большой цифрой пять" loading="lazy"><span class="photo-status">Загружаем…</span></span></button>
+        <button class="photo-card mosaic-card wide reveal" type="button" data-lightbox data-photo-name="IMG_4549"><span class="photo-shell" data-photo-shell><img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/IMG_4549.JPG" data-photo="IMG_4549" alt="Весёлая постановочная фотография друзей" loading="lazy"><span class="photo-status">Загружаем…</span></span></button>
+        <button class="photo-card mosaic-card reveal" type="button" data-lightbox data-photo-name="IMG_4563"><span class="photo-shell" data-photo-shell><img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/IMG_4563.JPG" data-photo="IMG_4563" alt="Современная композиция школьного группового портрета" loading="lazy"><span class="photo-status">Загружаем…</span></span></button>
+        <button class="photo-card mosaic-card tall reveal" type="button" data-lightbox data-photo-name="IMG_4564"><span class="photo-shell" data-photo-shell><img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/IMG_4564.JPG" data-photo="IMG_4564" alt="Школьники в свободной групповой композиции" loading="lazy"><span class="photo-status">Загружаем…</span></span></button>
+        <button class="photo-card mosaic-card reveal" type="button" data-lightbox data-photo-name="IMG_4566"><span class="photo-shell" data-photo-shell><img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/IMG_4566.JPG" data-photo="IMG_4566" alt="Друзья улыбаются в студии" loading="lazy"><span class="photo-status">Загружаем…</span></span></button>
+        <button class="photo-card mosaic-card reveal" type="button" data-lightbox data-photo-name="IMG_4570"><span class="photo-shell" data-photo-shell><img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/IMG_4570.JPG" data-photo="IMG_4570" alt="Спокойный студийный групповой портрет" loading="lazy"><span class="photo-status">Загружаем…</span></span></button>
       </div>
     </section>
 
-    <section class="wishes section" id="wishes">
-      <p class="section-no">04 / ВПЕРЁД</p>
-      <div class="wishes-card">
-        <span class="star">✦</span>
-        <h2>Пусть дальше будет<br><em>ещё интереснее.</em></h2>
-        <p>Новые классы, новые друзья, новые победы. А этот альбом всегда напомнит, с чего начиналась наша большая история.</p>
-        <div class="signature">4 «Е» · 2026</div>
+    <section class="finale section" id="finale">
+      <div class="finale-photo photo-shell" data-photo-shell>
+        <img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/YjPB/rkGWDEVGu/IMG_4559.JPG" data-photo="IMG_4559" alt="Групповой портрет учеников 4 «Е» класса" loading="lazy">
+        <span class="photo-status">Загружаем…</span>
+      </div>
+      <div class="finale-shade"></div>
+      <div class="finale-copy reveal">
+        <p>Школа № 219 · Новосибирск</p>
+        <h2>До свидания,<br><em>начальная школа.</em></h2>
+        <span>4 «Е» · 2026</span>
       </div>
     </section>
   </main>
 
-  <footer><a class="logo" href="#top"><span>4</span><i>Е</i></a><p>Цифровой выпускной альбом<br><span id="footerSchool">Школа № 219 · 2026</span></p><a href="#top">Наверх ↑</a></footer>
+  <footer class="footer">
+    <div><b>4 «Е»</b><span>Выпускной альбом 2026</span></div>
+    <p>Цифровой выпускной альбом · 2026</p>
+    <a href="https://vk.com/nsk_photobook" target="_blank" rel="noopener">Фотокнига Новосибирск ↗</a>
+  </footer>
 
-  <dialog class="lightbox" id="lightbox">
-    <button class="lb-close" type="button" aria-label="Закрыть">×</button>
-    <button class="lb-prev" type="button" aria-label="Предыдущая">←</button>
-    <figure><img id="lbImage" alt=""><figcaption id="lbCaption"></figcaption></figure>
-    <button class="lb-next" type="button" aria-label="Следующая">→</button>
+  <dialog class="lightbox" aria-label="Просмотр фотографии" data-lightbox-dialog>
+    <button class="lightbox-close" type="button" aria-label="Закрыть" data-lightbox-close>×</button>
+    <button class="lightbox-arrow prev" type="button" aria-label="Предыдущая фотография" data-lightbox-prev>←</button>
+    <figure><img alt=""><figcaption></figcaption></figure>
+    <button class="lightbox-arrow next" type="button" aria-label="Следующая фотография" data-lightbox-next>→</button>
   </dialog>
 </body>
 </html>
